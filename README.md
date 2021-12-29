@@ -1,0 +1,2 @@
+# Java8FunctionalUtilityClasses
+Functional programming with Declarative Approach
