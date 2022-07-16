@@ -238,4 +238,32 @@
           Now put method will just append the object nodes in the linked list
 
           But in case of get if we have a linked list at that index then we need an extra check to search correct value, this is done by equals() method. It checks every key of every node and if equals() returns true then map return that corresponding value from the linked list
+          
+
+
+#16 Is java pasty value or pass by reference
+
+          Java is pass by value
+
+#17. Why are comparable and comparator interfaces required in java
+
+          To sort custom objects. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
 
