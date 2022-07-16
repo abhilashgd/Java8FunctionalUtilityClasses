@@ -1,13 +1,13 @@
 # Java8FunctionalUtilityClasses
-Functional programming with Declarative Approach
+                Functional programming with Declarative Approach
 
-Includes
---> Combinator Pattern
---> functional Interfaces : Consumer, Function, Predicate, Supplier
---> Optional Interface
---> Streams implementing above
+                Includes
+                --> Combinator Pattern
+                --> functional Interfaces : Consumer, Function, Predicate, Supplier
+                --> Optional Interface
+                --> Streams implementing above
 
-Reference: https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html 
+                Reference: https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html 
 
 
 #1. Why java is not 100% object oriented
