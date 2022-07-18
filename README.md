@@ -417,6 +417,14 @@
 
             This error comes when you keep super classes first and sub classes later. Like here we kept exception which is parent of null pointer exception first
             Hence the order of catch blocks must be from most specific to most general
+            
+#24 What is the difference between final, finally and finalise in java?
+
+            Final - is a keyword used to apply restrictions on class, method and variable. Final class can't be inherited. Final method can't be overridden and final variable can't be changed
+
+            Finally - this keyword is used with the try-catch block to provide statements that will always get executed even if some exception arises. Usually, finally is used to close resources.
+
+            Finalize: is used to perform clean up processing just before the object is garbage collected.
 
 #Java 8 Features
 
