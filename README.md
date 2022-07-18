@@ -1,4 +1,4 @@
-# Java8FunctionalUtilityClasses
+# Java8 Basics
                 Functional programming with Declarative Approach
 
                 Includes
@@ -417,6 +417,8 @@
 
             This error comes when you keep super classes first and sub classes later. Like here we kept exception which is parent of null pointer exception first
             Hence the order of catch blocks must be from most specific to most general
+
+#Java 8 Features
 
 
 
