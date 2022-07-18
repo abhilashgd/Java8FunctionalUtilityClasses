@@ -240,14 +240,192 @@
           But in case of get if we have a linked list at that index then we need an extra check to search correct value, this is done by equals() method. It checks every key of every node and if equals() returns true then map return that corresponding value from the linked list
           
 
-
 #16 Is java pasty value or pass by reference
 
-          Java is pass by value
+        Java is pass by value
 
 #17. Why are comparable and comparator interfaces required in java
 
-          To sort custom objects. 
+          To sort custom objects
+
+          //COMPARABLE
+          Implement comparable
+
+          @override 
+          Public int compareTo(E e)
+          { return this.id -e.id }
+
+          //COMPARATOR
+
+          Public status Comparator<Employee> NameComparator = new Comparator<Employee>(){
+
+          @Override
+          Public int compare(Employee 21, Employee e2) {
+          Return e1.getName().compareTo(e2.getname());
+
+          }
+
+          }
+
+          Difference between comparable and comparator
+          Comparable
+          - no additional arguments are required
+          Arrays.sort(empArr);
+          - comparable is jn java.lang
+          - natural way of ordering
+          - compareTO needs to be implemented in DTO so source code is changes
+
+          Comparator
+          - we need to send comparator as an argument
+          - comparator is in java.util.comparator (additional import required)
+          - Arrays.sort( empire, comparator)
+          - comparator can have multiple way of ordering
+          - DTO source code need not be changes
+
+
+#18 Equals and Hashcode contract
+
+            e1==e1 shallow comparison
+            E1.equals(e2) deep comparison
+
+            //Equal implementation to check if IDs are equal
+
+            Public boolean equals(Object o){
+              if(o == null || getClass()!= p.getClass())
+                return false;
+              if(o ==this)
+              return true;
+              Employee e = (Employee) o;
+              return (this.getId() == e.getId());
+            }
+
+            Public int hashCode(){
+             Return getId();
+            }
+
+            IF two objects are equal according to the equals(Object o ) method then the hash code for both the objects must be the same (integer value)
+
+            Its not necessary that if you have same hash code for 2 object means those two object are equal. This is collision. Better has function prevents this.
+
+            Whenever it is invoked on the same object more than once during an execution of a java application, the hashCode method must consistently return the same integer.
+
+#19 can a Child method have less visibility than parent? NO
+
+
+#20 Dynamic polymorphism can be reduced by making methods static
+
+
+#21 Association - relationship between two classes
+
+          Aggregation
+           - weak -loose coupling
+          Public class Driver {
+           Private Car car;
+          }
+
+
+          Composition 
+          - strong - tight coupling
+
+
+#22 Covariant return type. 
+          Return type of child class overriden method must have a covariant return type ( like String for Object sub class return types)
+
+#23 Exception handling
+
+            What is an exception?
+            Exception is an abnormal condition which occurs during the execution of a program and disrupts normal flow of the program. If not handled properly it can cause program to terminate abruptly
+
+            Exceptions are handled using three blocks
+            Try - encloses set of statements which can throw exception hence are required to be monitored
+            Catch - when exception occur, this block catches that exception and work accordingly to handle it or to throw it as required
+            Finally - this block gets executed always regardless of exception occurrence. Hence clean up is done here
+
+            Hierarchy of exception handling
+
+            Throwable
+              - Exception
+                - checked exception
+                  - IO exception
+                  - SQL Exception
+                  - ClassNot found Exception
+                - Unchecked/ Runtime Exception
+                  - null pointer exception
+                  - number format exception
+                  - index out of bounds exception
+                    - Array Index out of bounds exception
+                    - StringIndex out of bound exception
+
+
+              - error
+                - Out of memory error
+                - Virtual Machine error
+
+
+            Difference between 
+
+            Exception
+            - we can recover from exception using try catch block or using throw
+            - compiler will have knowledge about checked exceptions here compiler will force you to use try catch blocks
+            - exceptions are related to application
+            - exceptions include both checked as well as unchecked type
+            Exceptions in java are of type java.lang.exception
+
+            Error
+            - recovering from error is not possible
+            - compiler will not have any knowledge about unchecked exception and error
+            - errors are related to environment where application is running
+            - all errors in java are unchecked type
+            Errors in java are java.lang.error
+
+
+            Can we write only try block without catch and finally blocks?
+            No. Either catch or finally is must
+            If no then what error will come?
+            Compile time error saying insert finally to complete try statement
+
+            Can we write any other statements between try catch or finally block?
+            No. Try must be follower directly by either catch or finally
+
+
+            Does remaining statements in try block execute after exception occurs?
+            No.
+
+
+            Difference between throw and throws
+
+            Throw 
+            - Java throw keyword is used to explicitly throw an exception
+            - Checked exception cannot be propagated using throw only
+            - throw is used within the method
+            - you cannot throw multiple exceptions
+
+
+            Throws 
+            - java throws keyword is used to declare an exception
+            - checked exception can be propagated with throws
+            - throws is used with the method signature 
+            - you can declare multiple exception
+
+            What happens when an exception is thrown by main method?
+
+            When an exception is thrown by main method, Java Runtime terminates the program and prints the exception message and the stack trace in-system console
+
+            Java Runtime Environment handles the exception
+
+            What do you mean by unreachable catch block?
+
+            This error comes when you keep super classes first and sub classes later. Like here we kept exception which is parent of null pointer exception first
+            Hence the order of catch blocks must be from most specific to most general
+
+
+
+
+
+
+
+
+
 
 
 
