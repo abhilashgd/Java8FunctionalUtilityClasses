@@ -1,4 +1,4 @@
-# Java8 Basics
+# Java Basics
                 Functional programming with Declarative Approach
 
                 Includes
