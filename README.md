@@ -541,6 +541,91 @@
 
             }
 
+#7 what are default methods in java 8?
+
+          Default method is a way for adding new methods to the interface without affecting the implementing classes. Hence with this new feature java people defended many compile time errors that may arise due to unimplemented methods of interface
+
+          EX: interface Animal {
+          Void legs();
+          //default void eyes(){
+          sout(two eyes");
+          }
+          }
+
+          The use of these default methods is "backward compatibility" which means if JDK modifies any Interface (without default method) then the classes which implement this interface will break.
+
+
+#8 is it necessary to override default methods?
+
+          - Default methods have dummy implementations
+          - Implementing classes if ok with dummy implementation then use dummy imply of default methods
+          - if not satisfied then they can override and provide their own implementation
+
+#9 is default keyword one of the access modifier?
+
+          - Default is not the access modifier like public or protected or private
+          - hence default keyword was only used in classes till 1.8 version for switch case only but never in interface
+          - now its used for default methods in interface to provide a default implementation for all implementing classes
+
+#10 how to override default methods?
+
+          - You can override default method by keeping same method (name + arguments)
+          - removing default keywords because in class default keyword is used in switch case to denote default case if no previous cases matched. So you can't use default keyword in class
+          - adding public as access modifier because in java8, by default all methods are public so in child u can't reduce visibility of override default method
+          -giving our own implementation
+
+#11 can you use hashcode() default implementation in interface?
+          - You cannot give your default implementation of Dashcode() in interface for all implementing classes to use.
+          - we are not allowed to override Object class's method as default methods in interface else will get compile time error
+
+          All implementing classes by default has access to all methods of object class.
+
+#12 Diamond problem with default methods in interface
+
+          - diamond problem of default methods of interface: if 2 implemented interfaces contain same default methods then thats the diamond problem
+          - in java, in such situation, the code will not compile.
+          Solution to diamond problem - use InterfaceName.super.methodName();
+
+          #13 why static methods were introduced in java 8
+
+          Public interface InterfaceWithStaticDemo {
+
+          Static void staticMeth(){
+
+          sout("this is static method");
+          }
+
+          }
+
+          - only reason for introducing static method in interface is that you can call those methods with just interface name. No need to create class and then its object.
+
+          Since interface can never contain:
+          Constructors,
+          Static blocks
+          Nothings costly in terms of memory and performance.
+
+          Hence we don't need to create object and hence if you have everything static then for interface rather than class
+
+
+          Note: we have this flexibility only after java 8, before that we needed to create class
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
