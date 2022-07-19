@@ -428,6 +428,137 @@
 
 #Java 8 Features
 
+#1 Why Java 8 ? Main agenda behind java 8
+
+        Significant reason for introducing java 8 was to introduce conciseness in the code.
+
+        Java brings in functional programming in which is enabled b lambda expressions ( a powerful tool to create concise code base)
+
+        If you have ever observed, with python, Scala, we can do the same thing in every less loc. by mid 20s java lost a large market due to these languages. To prevent further loss, java upgraded itself from only OOPs language to some concepts of FP to create concise code base
+
+#2 What are new features which got introduced in java 8
+
+        - Lambda expression
+        - Stream API
+        - Default methods in the interface
+        - Static methods
+        - Functional interface
+        - Optional
+        - Method references
+        - Date API
+        - Nashorn, JavaScript Engine
+
+
+#3 Main advantages of using java 8
+
+        - compact code ( Less boiler plate code)
+        - more readable and reusable code
+        - more testable code
+        - parallel operations
+
+#4 what is lambda expression
+
+        Lambda expression is an anonymous function ( without name, return type and access modifier and having one lambda (-> symbol)
+
+
+        Normal programming
+        Public void add(int a, int b){
+        System.out.println(a+b);
+        }
+
+
+        Equivalent lambda expression
+        (A,b) -> system.out.prntln(a+b);
+
+        BiConsumer<Integer,Integer> biConsumer = (a,b) -> System.out.println(a+b);
+        Biconsumer.accept(10,5);
+
+
+
+#5 what are functional interfaces?
+
+          - Functional interfaces are those interfaces which can have only one abstract method
+          - it can have any number of static methods, default methods. No restrictions on that
+          - There are many functional interfaces already present in java such as ex: comparable, runnable
+
+          -Functional interface is used to provide reference to lambda expressions 
+          Example : Comparator<String> c = (s1,s2) -> s1.compareTo(s2);
+               Functional interface = Lambda expression
+
+          To create our own functional interface
+          - create an interface
+          - annotate that with @FunctionalInterface
+          - Define exactly one abstract method
+          - there is no restrictions on number of static and default methods defined in such an interface
+
+          NOTE: java can implicitly identify functional interface but still you can also annotate it with @FucntionalInterface. If in case we add two abstract methods then compiler will throw an error.
+
+#6 what is method referencing in java 8?
+
+          Method reference is replacement of lambda expressions. It is used to refer method of functional interface to an existing method. Mainly it is used for code reusability
+
+          Functional Interfaces abstract method can be mapped to specify existing method using double colon operator (::) this is method reference.
+
+          Hence method reference is an alternative to lambda expressions
+
+          Whenever we have existing implementation of abstract method of our functional interface then we can go for method reference. If no such method like testImplementation() is available then go for lambda expressions
+
+
+
+            @FunctionalInterface
+            Public interface FunctionalInterfaceDemo {
+
+            Void singleAbstractMethod();
+
+            default void printName()
+            sout("print name method")
+
+            default void printName2()
+            sout(print name 2);
+
+            }
+
+            Public class MethodReferenceDemo{
+
+            psvm(String args) {
+            FunctionalInterfaceDemo fDemo = () -> sout("print something");
+            fDemo.singleAbstractMethod();
+
+            Or
+
+            FunctionalInterfaceDemo fDemo = Test::testImplementation;
+            fDemo.singleAbstractMethod();
+
+            }
+            }
+
+            class Test {
+
+            Public static void testImplementation(){
+
+            sout("This is test implementation");
+            }
+
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
