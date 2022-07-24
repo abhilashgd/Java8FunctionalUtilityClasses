@@ -647,7 +647,7 @@
           - three ways to join
             - and
             - or
-            - negate
+            - negate (Only one single predicate
           Eg: if you want to test 2 conditions
             - to check length of string > 5
             - to check if length is even
@@ -665,7 +665,92 @@
 
             Function <InputType, OutputType> parameter = lambda expression;
             Function<Integer, Integer> squareOf = i -> i*i;
+            Integer result = squareOf.apply(10);
             sout("" _ squareOf.apply(10)
+#16 what is the difference between predicate and function ?
+
+            Predicate
+            - it has the return type as boolean. Its used for conditional checks
+            - It is written in the form of predicate<T> which accepts single argument
+            - it contains test() method
+
+            Function
+            - It has the return type as Object. Its used to perform operations and return result
+            - it is written in the form of Function< T, R> which also accepts a single argument but return any type of object denoted by R
+            - it contains apply() method
+
+
+#17 Function chaining
+
+            Function<Integer, Integer> doubleIt = i -> 2*1;
+            System.out.println( "Double Function + doubleIt.apply(2));
+
+            Function«Integer, Integer> cubeIt = i -› i*j*i:
+            System.out.println("Cube Function" + cubeIt.anplyk2));
+            //AND THEN - first double it and then cube
+            System.out.println("First Doubling using apply + doubleIt.andThen(cubeIt).apply(2));
+            //COMPOSE - first cure it and then double it
+            System.out.println("First Cubing using compose + doubleIt.compose(cubeIt).apply(2));
+
+            Multiple functions can be similarly chained
+
+            F1.andthen(f2).andTHen(f3).andThen(f4).apply(Inputs);
+
+#18 what is consumer functional interface?
+
+            Predicate<T> takes 1 input and returns boolean.
+            Function<T,R> takes 1 input and 1 return type produced after performing some operation on that input
+
+            Consumer<T> -> It will consume Item. Consumers never return anything (never supply). They just consume.
+
+            Ex: take any object and save its details in database and don't return anything
+
+            Interface Consumer<T>{
+            Public void accept(T t)
+            }
+
+#19 what is consumer chaining?
+
+            We can combine. Chain multiple consumers together with andThen
+            There is only one way to combine consumers
+            C1.andThen(c2).apply(Input) - first c1 then c2
+
+            No compose() in consumer
+            Multiple consumers can be chained together
+
+            C1.andThen(c2).andThen(c3).andThen(c4).apply(input);
+
+
+            //CODE EXAMPLE
+
+            package predicate_demo;
+            import java.util.function.Consumer;
+            public class ConsumerDemo{
+            public static void main(String[] args) f
+
+            //normal programming
+            //ConsumerDemo consumerDemo = new ConsumerDemo0) ;
+            //onsumerDemo.squreInt(5);
+
+            Consumer«Integer> squareMe = i -› System.out.println("Taking an input and performing operation" + i*i);
+            Consumer«Integer> doubleMe = i -› System.out.println("Taking an input and performing operation" + 2*i);
+            squareMe.accept(5);
+            squareMe.andThen(doubleMe).accept(5);
+            }
+            //normal programming
+            public void squreInt (int i) f
+            int squred = i*i;
+            System.out.println("Squared number is
+            1
+            T
+            "+ squred);
+            1
+
+#20 what is supplier function
+
+
+
+
 
 
 
