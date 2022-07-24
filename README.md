@@ -609,6 +609,71 @@
 
           Note: we have this flexibility only after java 8, before that we needed to create class
 
+#13 are static methods available to implementing classes by default?
+
+        - static methods are not available to implementing classes.
+        - they are not default methods. They are static.
+        - hence, you can call these methods using interface name explicitly from the implementing classes as implementing classes wont have access to these methods directly.
+        - This is the disadvantage of static methods of interface that its not available to implementing classes.
+
+
+#14 what are predicates?
+        - Predicates is a predefined functional interface (having only one abstract method)
+         - The only abstract method of predicate is test(T t);
+         - whenever we want to check some boolean condition then we go for predicates.
+
+
+          Predicate<String> checklength = s->s.length() >=5;
+          sout("The length of string is greater than 5: " + checkLength.test("Code decode"));
+
+
+          Type parameter and return types of predicates?
+          Input to predicate can be anything like
+          - predicate<String>
+          - Predicate<Integer>
+          - Predicate<Employee>
+
+          Hence only 1 type argument is required which is input type in predicate.
+
+          Return type is not required as its always boolean only.
+
+          Advantages of predicates?
+          - Code reusability
+          - if you have same conditions being used 100 times in a program then you can write once and just use 100 times with checkLength(different string to be tested)
+          - Conditional checks are folded by functional interfaces
+
+          What is predicate joining
+          - you can combine predicates in serial predicate
+          - three ways to join
+            - and
+            - or
+            - negate
+          Eg: if you want to test 2 conditions
+            - to check length of string > 5
+            - to check if length is even
+            - define two predicates and use .and or .or or.negate etc
+
+#15 what are functions
+
+            - Functions are nothing but functional interface with just one abstract method
+
+            - Given some input, perform some operation on input and then produce/ return result ( not necessary a boolean value)
+
+            - this takes 1 input and returns one output
+            - in predicate we used to take one input and return type is always boolean
+            - in function return type is not fixed hence we declare both input and return type
+
+            Function <InputType, OutputType> parameter = lambda expression;
+            Function<Integer, Integer> squareOf = i -> i*i;
+            sout("" _ squareOf.apply(10)
+
+
+
+
+
+
+
+
 
 
 
