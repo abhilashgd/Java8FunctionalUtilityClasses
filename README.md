@@ -749,7 +749,61 @@
 #20 what is supplier function
 
 
+            Supplier<R> -> it will just supply required objects and will not take any input.
+            It always going to supply never consume/ take any input
 
+            EG: always supply me current date
+
+            Interface Supplier<R>{
+            Public R get();
+
+            }
+
+            No chaining as no input is given to this. Only gives output.
+
+            EXAMPLE: 
+            Supplier<Date> currentDate = () -> new Date();
+            Sout("currentDate.get());
+
+
+#21 use of BiConsumer BiFunction, BiPredicate and why no BiSupplier?
+
+
+            Predicate<T> -> test() -> return boolean
+            Function<T,R> -> apply() -> return anything
+            Consumer<T> -> accept() -> return nothing
+            Supplier<R> -> get() -> returns anything accepts nothing
+
+            What if we need 2 arguments for operation?
+
+            Then we need Bi XYZ functional Interfaces
+
+            There is no input in supplier so no 1 or 2 input arguments needed. Hence no Bi Supplier
+
+
+            Example:
+
+            public class BiPredicateBiFunctionDemo{
+            public static void main(String[] args) {
+            BiPredicate<Integer, Integer> checkSumOfTwo
+            = (a, b) -> a+b ›= 5;
+
+            System.out.println("sum of 2 and 5 is greater than 5: " + checkSumofTwo.test(2,5);
+
+            System.out.println("sum of 2 and 1 is greater than 5
+             : " + checkSumOfTwo.test(2,1));
+
+            Bifunction<Integer, Integer, Integer> multiplyBoth = (a,b) -> a*b;
+            System.out.println("Multiplication of 5 and 10 is " + multiplyBoth.apply(5, 10));
+            }
+
+
+#22 If we want to operate on 3 arguments then triPredicate?
+
+            There are no TriPredicate or TriFucntion etc
+            No QuadPredicate No QuadFucntion
+
+            Java 8 has inbuilt Functional Interfaces that can take only 1 or 2 arguments no more.
 
 
 
