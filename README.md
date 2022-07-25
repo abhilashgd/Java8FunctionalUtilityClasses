@@ -805,6 +805,107 @@
 
             Java 8 has inbuilt Functional Interfaces that can take only 1 or 2 arguments no more.
 
+#23  what are streams?
+
+            If we want to process bulk objects of collection then go for streams concept
+            Way to operate on collection in java 8 is stream
+            Its a special iterator class that allows processing collections of objects in a functional manner
+            EX: fetch all objects from collection of list whose values is greater than 10
+
+
+#24 what is the difference between streams (java 1.8) and java.io.stream ?
+
+            Java io streams is a sequence of characters or binary data which is used to be written to a file or to read data from a file
+
+            While streams java 1.8 is no where related to files, its related to collection object.
+
+            Java io streams related to file whereas java 8 streams are related to collection object.
+
+            Hence if we need to perform some operations on collection there we should go for streams.
+
+
+#25 Difference between streams and collection?
+
+            To represent group of collection as single entity then we should use collection concept.
+            If we want to perform operation on bulk objects in collection then we should go for streams
+
+
+#26 steps to create and process stream
+
+          We can get stream object by :
+          - Stream s = colectionObject.stream();
+          - Once we get stream object we can process the object of collection
+          - processing of stream consists of 2 steps/stages
+            - configuration of stream
+            - processing that configuration
+          - Configuration can be done by 
+            - map
+            - filter
+          Example:
+
+          List‹Integer› arList =new ArrayList<Integer>();
+          arList.add(15);
+          arList.add(25);
+          arList.add(5);
+          Stream s = arList. stream() ;
+
+           arList.stream().filter(i -› 1%2 == 0). forEach(x-> System.out.println(x));
+
+
+#27 how to map the stream objects?
+
+            What if we don't want to filter out
+            We rather want to create new object against each existing stream object based on some function
+            EX: create new object by squaring its value
+
+            Stream s = arList.stream().map(i->i*i);
+              s.forEach(x-> System.out.println(x));
+              
+            Stream s = arList.stream().map(i->i*i);
+              s.forEach(x-> System.out.println(x));
+
+#28 Difference between filter and map
+
+            If we want to fetch/filter objects from collection like filter only even numbers from arrayList collection then use filter for configuration of stream
+
+            If we want to perform some operation on each objects of the collection then create another mapped object with different value (after operation is performed) for each object of that collection, then use map
+
+            In filter, because of filtering, number of objects filtered list is less than original list while in map same number of objects are there in both new and original list created
+
+#29 processing of stream
+          - collect
+          - count
+          - sorted
+          - min max
+          - for each
+          - to array
+          - of()
+
+#30 JAVA 8 Interface changes
+
+          - static method
+          - default method
+
+          Why do we need these?
+          Even if we wanna change or add any new method in interface then it requires change in all implementing classes
+          To create a default method in java interface, we need to use default keyword with the method signature
+
+          Interface methods are by default public and abstract
+
+          Default methods are no more abstract
+
+          Ex: default void my AbstractMethod(){}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
