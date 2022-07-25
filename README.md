@@ -426,6 +426,72 @@
 
             Finalize: is used to perform clean up processing just before the object is garbage collected.
 
+#25 Dynamic polymorphism?
+
+            Possible only with methods 
+            Not Possible with instance variables
+
+            Parent reference = new childObject();            
+            
+            
+ #26 Catagories of Design patterns
+
+          - Creational patterns 
+          - Behavioural patterns
+          - structural patterns
+          - J2EE patterns
+
+          Why do we need design pattern?
+
+          As design patterns are well documented and understood by software architects, designers and developers, then their application within a specific solution will likewise be well understood
+
+          Patterns give a software developer an array of tried and tested solutions to common problems, thus reducing the technical risk to the project by not having to employ a new and untested design, thus saving time and effort during the implementation stage of the software development life cycle
+
+          They are language neutral and so can be applied to any language that supports object orientation
+
+          By using well understood and documented solutions, the final product will have a much higher degree of comprehension. If the solution is easier to comprehend, then by extension, it will also be easier to maintain
+
+#27 What is factory pattern?
+
+           In factory pattern, we dont expose creation logic to the client and refer the created object using a standard interface
+           It is also known as virtual constructor
+            
+            Steps: 
+            1. Create main class which calls factory class
+            2. factory class returns required class interface 
+           
+            Factory pattern
+
+            //INTERFACE SUPPORTING FACTORY
+            Interface Profession
+
+            //IMPLEMENTING CLASSES	
+            Class Doctor implements Profession {}
+            Class Engineer implements Profession {}
+            Class Teacher implements Profession {}
+
+            //FACTORY CLASS 
+            Class ProfessionFactory{
+
+            Public profession getProfession( Staying typeOfProfession){
+            if(typeOfProfession = "doctor") return new Doctor();
+            else if(typeOfProfession = "Engineer") return new engineer();
+            else if(typeOfProfession = "Teacher") return new Teacher();
+
+            }
+
+            }
+            //MAIN CLASS
+            FactoryPastternMainClass {
+            psvm(string[] args){
+            ProfessionFactory professionFactory = new ProfessionFactory();
+            Profession doc = professionFactory.getProfession("Doctor");
+            doc.print();
+            }
+
+            }
+            
+
 #Java 8 Features
 
 #1 Why Java 8 ? Main agenda behind java 8
@@ -895,6 +961,39 @@
           Default methods are no more abstract
 
           Ex: default void my AbstractMethod(){}
+#31 Static methods in interfaces
+
+          - These are similar to default methods, just that its static hence its implementation cannot be changed in child classes
+
+          Thus implementing class need not and cannot change the definition
+
+          Static methods of an interface can't be overridden
+
+          Should always be called with interface name
+          Interface.StaticMethodName
+
+          Why do we need static methods?
+
+          Interface static method helps us in providing security by not allowing implementation classes to override them.
+
+          Interface static methods are good for providing utility methods, for example null checking whose definition will never change.
+
+#32 how to solve diamond problem of default methods in interface ?
+
+            Interface.super.defaultMethod()
+#33 Java Interface Default method.
+
+            Why do we need default methods?
+
+            If there are many classes implementing an interface, adding a method in ht interface will require changes in all classes. So default methods help us to avoid the changes by giving a default implementation in the interface
+
+            Diamond problem in default method
+
+            Consider the scenario where 2 or more interfaces have same default methods implemented in respective interfaces. Then child classes implementing both interfaces will be confused which default implementation to accept
+
+
+
+
 
 
 
