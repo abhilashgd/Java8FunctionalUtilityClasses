@@ -534,7 +534,12 @@
           // create a public get method to return instance
           Public static SingletonClass getInstance(){ return singletonInstance; }
 
-            
+#30 what is prototype design pattern ?
+
+          - prototype pattern refers to creating duplicate object while keeping performance in mind
+          - it involves implementing a prototype interface which tells to create a clone of the current object
+          - this pattern is used when creation of object directly is costly. For example it requires data base calls or required too much of processing that will take a lot of memory
+
 
 #Java 8 Features
 
