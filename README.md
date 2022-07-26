@@ -491,6 +491,50 @@
 
             }
             
+ #28 what is abstract factory pattern ?
+
+          - It is also called as factory of factories
+          - Abstract factory lets a class return a factory of classes
+          - it is also known as kit
+
+          Steps:
+            - create main class which call factory of factory class
+            - factory of factory / factory producer creates instance of factory class
+            - factory class returns required class instance
+
+          //EXAMPLE
+
+          Main class 
+           - AbstractFactoryProducer
+            - AbstractFactory
+              - Profession Abstract Factory
+                - profession
+                  - Engineer
+                  - Teacher
+              - Trainee profession abstract factory
+                - profession
+                  - Trainee engineer
+                  - trainee teacher
+
+
+#29 what is singleton design pattern ?
+
+          - it is a simplest design pattern
+          - this pattern involves a single class which is responsible to create an object while making sure that only single object gets created
+          - this class provides a way to access its only object which can be accessed directly without need to instantiate the object of the class
+
+          Steps:
+
+          //create private static variable
+           - private static SingletonClass singletonInstance = new SingletonClass();
+
+          // make constructor private
+          Private SingletonClass(){}
+
+          // create a public get method to return instance
+          Public static SingletonClass getInstance(){ return singletonInstance; }
+
+            
 
 #Java 8 Features
 
@@ -981,6 +1025,7 @@
 #32 how to solve diamond problem of default methods in interface ?
 
             Interface.super.defaultMethod()
+            
 #33 Java Interface Default method.
 
             Why do we need default methods?
