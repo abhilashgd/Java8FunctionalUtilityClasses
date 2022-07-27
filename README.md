@@ -502,6 +502,7 @@
 
           -If we want to collect elements of stream after filtering or mapping and add them to the required collection then use collect method
           - this will work for both filter and collect methods
+          - List<Integers> secondList = filteredStream.collect(Collectors.toList);
 
 
 
