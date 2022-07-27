@@ -592,6 +592,16 @@
           - memory is compacted after GC deleted the object so that remaining objects are in contiguous blocks at the start of heap memory
           - this compaction makes it easier to allocate memory sequentially after a chunk of allocated memory are for new objects in heap
 
+          HEAP
+
+          Young gen 
+          -eden
+          -S0 S1 - survivor space
+
+          Old Generation
+          - tenured
+          Permanent gen
+          - permanent
 
 
 
