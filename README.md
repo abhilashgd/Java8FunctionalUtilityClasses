@@ -540,6 +540,61 @@
           - it involves implementing a prototype interface which tells to create a clone of the current object
           - this pattern is used when creation of object directly is costly. For example it requires data base calls or required too much of processing that will take a lot of memory
 
+#31 what is garbage collection and what are its advantages?
+
+          - GC in java ia an automatic process of looking at heap memory, identifying which objects are in use and which are not, and deleting the unused objects
+
+          - An in use object or a referenced object means that some part of your program still maintains a pointer to that object
+
+          - An unused object or unreferenced object is no longer referenced by any part of your program so the memory used by an unreferenced object can be reclaimed
+
+          - Main advantage of automatic garbage collection in java is that it removes the burden of manual memory allocation/de allocation from us so that we can focus on problem solving
+
+
+          - Garbage collection is always done on heap 
+          - There are two ways in which we can request the jam to execute the garbage collection
+            - call the system class System.gc() method which will request the jam to perform GC
+            - the methods to perform the garbage collections are present in the runtime class provided by java. The runtime class is a singleton for each java main program. The method getRuntime() returns a singleton instance of the runtime class. The method gc() can be invoked using this instance of runtime to request the garbage collection
+
+          System.gc(); or
+          Runtime.getRuntime().gc();
+
+#32 where are objects created in memory? On stack or heap?
+
+          Whenever an object is created, its always stored in the heap space and stack memory contains the reference to it. Stack memory only contains local primitive variables and reference variables to objects in heap space
+
+          Thus all java objects are always created on heap in java
+          CustomObj s1 = new CustomObj()
+
+#33 when does an object become eligible for garbage collection?
+
+          - an object becomes eligible for garbage collection when no live thread can access it.
+          - objects not in use (unreferenced objects) are those objects which are not needed by java program, no part of java program is pointing to that object
+          - so these unused objects can be cleaned in GC ( garbage collection) process and memory used by an unreferenced object can be reclaimed
+
+
+#34 what are the different ways to make an object eligible for GC when it is no longer needed ?
+          - set all available objects references to null
+          - make the reference variable to refer to another object
+          - creating islands of isolation
+
+#35 what is the purpose of overriding finalise method ?
+
+          - finalise method in java also called finaliser is a method defined in java.lang.object
+          - its called by garbage collector just before collecting any object which is eligible for GC
+          - Thus finalize() method provides last chance to do cleanup and free any remaining resource
+
+#36 How garbage collection works ?
+
+          - GC works in 2 steps: Marking: unreferenced objects in heap are identified and marked as ready for garbage collection.
+          - Deletion ( normal deletion)/Deletion + compaction: in this step, objects marked previously are deleted
+
+          - memory is compacted after GC deleted the object so that remaining objects are in contiguous blocks at the start of heap memory
+          - this compaction makes it easier to allocate memory sequentially after a chunk of allocated memory are for new objects in heap
+
+
+
+
 
 #Java 8 Features
 
