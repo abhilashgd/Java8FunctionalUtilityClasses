@@ -504,7 +504,12 @@
           - this will work for both filter and collect methods
           - List<Integers> secondList = filteredStream.collect(Collectors.toList);
 
+#35 min and max
 
+                Integer minValue = arList.stream ().min((i1, i2) -> i1.compareTo(i2)) .get();
+                System.out.println(minValue);
+                Integer maxValue = arList.stream().max((i1, i2) -> i1. compareTo(i2)) .get() ;
+                System.out.println(maxValue);
 
 
 
