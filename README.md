@@ -511,6 +511,15 @@
                 Integer maxValue = arList.stream().max((i1, i2) -> i1. compareTo(i2)) .get() ;
                 System.out.println(maxValue);
 
+#36 how to process streams using toArray()
+        
+               Object[] myArray =  filteredStream.toArray();
+                - toArray() always returns an object array
+                
+#37 Stream.of()
+
+                - Stream.of(1,11,111,1111,11111,1111111).forEach( x->)
+                - a group of elements can be converted into a stream so that multiple operations can be performed.
 
 
 
